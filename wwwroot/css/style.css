@@ -1,0 +1,14 @@
+﻿body, html {
+    background-color: #FFF1CA;
+    height: 100%;
+    margin: 0;
+}
+
+.sidebar {
+    background-color: #2D4F2B;
+}
+
+.topbar {
+    background-color: #708A58;
+}
+}
