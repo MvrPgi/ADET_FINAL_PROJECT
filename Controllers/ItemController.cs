@@ -68,5 +68,30 @@ namespace ADET_FINAL_PROJECT.Controllers
 
 
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit()
+        {
+            var items = await dbContext.Items.ToListAsync(); 
+            return View(items);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditConfirmed(Guid id, AddItemViewModel viewModel)
+        {
+            var item = await dbContext.Items.FindAsync(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            item.Name = viewModel.Name;
+            item.Category = viewModel.Category;
+            item.Description = viewModel.Description;
+            item.Quantity = viewModel.Quantity;
+            item.Status = "High"; // Default value for Status
+            dbContext.Items.Update(item);
+            await dbContext.SaveChangesAsync();
+            return RedirectToAction("Edit");
+        }
     }
 }
