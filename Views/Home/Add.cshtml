@@ -6,20 +6,28 @@
         <h2 class="mb-4" style="font-family: 'Caveat', cursive;">Add Item</h2>
 
         <div class="container pt-3 pb-4" style="max-width: 800px">
+            <div class="d-flex justify-content-end mb-3">
+                <a asp-controller="Home" asp-action="NewAdd" class="btn btn-success rounded-pill fw-bold">Add New Item</a>
+            </div>
             <form method="post" class="text-center" >
                 <div class="mb-3">
                     <label class="form-label fw-semibold">Name</label>
-                    <input class="form-control rounded-pill" />
+                        <select class="form-select rounded-pill"  required>
+                            <option value="" disabled selected>Select Name</option>
+                            <option value="Rose">Red Horse and Roses</option>
+                            <option value="Tulip">LiLAKLAK</option>
+                            <option value="Daisy">Baby's Breath'</option>
+                        </select>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label fw-semibold">Category</label>
-                    <input class="form-control rounded-pill" />
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label fw-semibold">Description</label>
-                    <input class="form-control rounded-pill" />
+                        <select class="form-select rounded-pill" required>
+                            <option value="" disabled selected>Select Name</option>
+                            <option value="Rose">Flower</option>
+                            <option value="Tulip">Alcohol</option>
+                            <option value="Daisy">Flowers & Alcohol</option>
+                        </select>
                 </div>
 
                 <div class="mb-4">
@@ -32,9 +40,11 @@
                     <a asp-controller="Home" asp-action="Inventory" class="btn btn-danger flex-fill rounded-pill fw-bold">Cancel</a>
                 </div>
 
-                <button type="submit" name="close" value="true" class="btn btn-success w-100 rounded-pill fw-bold">
-                    Confirm & Close
-                </button>
+
+                <a asp-controller="Home" asp-action="Inventory" class="btn btn-success w-100 rounded-pill fw-bold text-white" style="text-decoration: none;">
+                        Confirm & Close
+                </a>
+
             </form>
         </div>
         

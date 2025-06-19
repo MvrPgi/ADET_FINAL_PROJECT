@@ -19,14 +19,16 @@
 
     <div class="d-flex">
         <div class="text-white p-3 vh-100 sidebar" style="width: 220px;">
-            <h4 class="text-light" style="font-family: 'Caveat', cursive; font-weight: bold;">BuLAKLAK</h4>
+            <div class="d-flex justify-content-center mb-3">
+                <img src="~/assets/logo-beige.png" class="text-center" alt="BuLAKLAK Logo" style="height: auto; width: 150px;" />
+            </div>
             <ul class="nav flex-column mt-4">
                 <li class="nav-item">
                     <a class="nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Inventory" ? "active text-warning fw-bold" : "text-white")"
                        asp-area="" asp-controller="Home" asp-action="Inventory">Inventory</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Add" ? "active text-warning fw-bold" : "text-white")"
+                    <a class="nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Add" || ViewContext.RouteData.Values["action"].ToString() == "NewAdd" ? "active text-warning fw-bold" : "text-white")"
                        asp-area="" asp-controller="Home" asp-action="Add">Add Item</a>
                 </li>
                 <li class="nav-item">

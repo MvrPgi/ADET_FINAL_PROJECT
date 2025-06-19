@@ -38,6 +38,11 @@ namespace ADET_FINAL_PROJECT.Controllers
             return View();
         }
 
+        public IActionResult NewAdd()
+        {
+            return View();
+        }
+
         public IActionResult Register()
         {
             return View();
