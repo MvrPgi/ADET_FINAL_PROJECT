@@ -11,7 +11,7 @@ namespace ADET_FINAL_PROJECT.Controllers
         private readonly ApplicationDbContext dbContext;
         public ItemController(ApplicationDbContext dbContext)
         {
-           this.dbContext = dbContext;
+            this.dbContext = dbContext;
         }
         [HttpGet]
         public IActionResult Add()
@@ -43,6 +43,30 @@ namespace ADET_FINAL_PROJECT.Controllers
             var items = await dbContext.Items.ToListAsync();
 
             return View(items);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete()
+        {
+            var items = await dbContext.Items.ToListAsync();
+
+            return View(items);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        {
+            var item = await dbContext.Items.FindAsync(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            dbContext.Items.Remove(item);
+            await dbContext.SaveChangesAsync();
+            return RedirectToAction("Delete");
+
+
         }
     }
 }
