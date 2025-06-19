@@ -18,11 +18,30 @@ namespace ADET_FINAL_PROJECT.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Inventory()
         {
             return View();
         }
 
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        public IActionResult Edit()
+        {
+            return View();
+        }
+
+        public IActionResult Delete()
+        {
+            return View();
+        }
+
+        public IActionResult Register()
+        {
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
