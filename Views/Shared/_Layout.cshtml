@@ -9,10 +9,39 @@
     <link rel="stylesheet" href="~/ADET_FINAL_PROJECT.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <div>
-        <main role="main">
-            @RenderBody()
-        </main>
+    <header>
+        <link href="/css/style.css" rel="stylesheet" />
+    </header>
+
+    <div class="row" style="background-color: #708A58;">
+        <p class="text-end pe-4 pt-2 text-white">User</p>
+    </div>
+
+    <div class="d-flex">
+        <div class="text-white p-3 vh-100 sidebar" style="width: 220px;">
+            <div class="d-flex justify-content-center mb-3">
+                <img src="~/assets/logo-beige.png" class="text-center" alt="BuLAKLAK Logo" style="height: auto; width: 150px;" />
+            </div>
+            <ul class="nav flex-column mt-4">
+                <li class="nav-item">
+                    <a class="nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Inventory" ? "active text-warning fw-bold" : "text-white")"
+                       asp-area="" asp-controller="Home" asp-action="Inventory">Inventory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Add" || ViewContext.RouteData.Values["action"].ToString() == "NewAdd" ? "active text-warning fw-bold" : "text-white")"
+                       asp-area="" asp-controller="Home" asp-action="Add">Add Item</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Edit" ? "active text-warning fw-bold" : "text-white")"
+                       asp-area="" asp-controller="Home" asp-action="Edit">Edit Inventory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  @(ViewContext.RouteData.Values["action"].ToString() == "Delete" ? "active text-warning fw-bold" : "text-white")"
+                       asp-area="" asp-controller="Home" asp-action="Delete">Delete Item</a>
+                </li>
+            </ul>
+        </div>
+        @RenderBody()
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
