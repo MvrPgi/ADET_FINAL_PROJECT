@@ -1,8 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Edit";
 }
-
-    <!-- Main Content -->
+@model List<ADET_FINAL_PROJECT.Models.Entities.Item>
     <div class="container pt-3 pb-4" style="min-height: 100vh;">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2 class="mb-0" style="font-family: 'Caveat', cursive;">Edit Item</h2>
@@ -12,9 +11,10 @@
             </div>
         </div>
 
-        <table class="table table-hover table-bordered text-center">
+    <table class="table table-hover table-bordered text-center">
         <thead class="table-light">
             <tr>
+                <th>Edit</th>
                 <th style="width: 10%;">Item ID</th>
                 <th>Name</th>
                 <th>Category</th>
@@ -24,18 +24,23 @@
                 <th>Status</th>
             </tr>
         </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
                     <td>
-                        <input type="text" class="form-control text-center" value=@item.ID readonly />
+                        <input type="checkbox" class="form-check-input toggle"
+                               onchange="rowEdit(this)">
+                    </td>
+
+                    <td>
+                        <input type="text" class="form-control text-center" value="@item.ID" readonly />
                     </td>
                     <td>
-                        <input type="text" class="form-control text-center" value=@item.Name />
+                        <input type="text" class="form-control text-center" value="@item.Name" disabled />
                     </td>
                     <td>
-                        <select class="form-select text-center">
+                        <select class="form-select text-center" disabled>
                             <option selected disabled>@item.Category</option>
                             <option>Flower</option>
                             <option>Alcohol</option>
@@ -43,48 +48,35 @@
                         </select>
                     </td>
                     <td>
-                        <input type="text" class="form-control text-center" value=@item.Description />
+                        <input type="text" class="form-control text-center" value="@item.Description" disabled />
                     </td>
                     <td>
-                        <input type="number" class="form-control text-center" value=@item.Quantity readonly />
+                        <input type="number" class="form-control text-center" value="@item.Quantity" readonly />
                     </td>
                     <td>
                         <input type="text" class="form-control text-center" value="2025-06-19" readonly />
                     </td>
                     <td>
-                        <input type="text" class="form-control text-center" value=@item.Status readonly />
+                        <input type="text" class="form-control text-center" value="@item.Status" readonly />
                     </td>
-                    </tr>
+                </tr>
+            }
+        </tbody>
+    </table>
 
-                }
-
-            <tr>
-                <td>
-                    <input type="text" class="form-control text-center" value="1234" readonly />
-                </td>
-                <td>
-                    <input type="text" class="form-control text-center" value="Rose" />
-                </td>
-                <td>
-                    <select class="form-select text-center">
-                        <option selected>Bouquet</option>
-                        <option>Single</option>
-                        <option>Gift Set</option>
-                    </select>
-                </td>
-                <td>
-                    <input type="text" class="form-control text-center" value="Freshly picked flowers" />
-                </td>
-                <td>
-                    <input type="number" class="form-control text-center" value="10" readonly />
-                </td>
-                <td>
-                    <input type="text" class="form-control text-center" value="2025-06-19" readonly />
-                </td>
-                <td>
-                    <input type="text" class="form-control text-center" value="High" readonly />
-                </td>
-            </tr>
-        </table>
     </div>
 </div>
+
+
+    <script>
+        function rowEdit(checkbox) {
+            const row = checkbox.closest('tr');
+            const inputs = row.querySelectorAll('input, select');
+
+            inputs.forEach(input => {
+                if (!input.classList.contains('toggle')) {
+                    input.disabled = !checkbox.checked;
+                }
+            });
+        }
+    </script>
