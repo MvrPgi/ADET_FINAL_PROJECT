@@ -37,6 +37,31 @@ namespace ADET_FINAL_PROJECT.Controllers
             return View();
         }
 
+        public IActionResult NewAdd()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> NewAdd(AddItemViewModel viewModel)
+        {
+            int quantity = int.TryParse(viewModel.Quantity, out int q) ? q : 0;
+            var item = new Item
+            {
+                Name = viewModel.Name,
+                Category = viewModel.Category,
+                Description = viewModel.Description,
+                Quantity = viewModel.Quantity,
+                Status = quantity < 10 ? "Low" :
+                         quantity > 20 ? "High" : "Medium"
+            };
+
+            await dbContext.Items.AddAsync(item);
+            await dbContext.SaveChangesAsync();
+
+            return View();
+        }
+
         [HttpGet]
         public async Task<IActionResult> Inventory()
         {
