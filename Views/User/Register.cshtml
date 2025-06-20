@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+<header>
+    <link href="/css/style.css" rel="stylesheet" />
+</header>
+
+<div class="row justify-content-center">
+    <div class="text-center p-5" style="font-family: 'Caveat', cursive;">
+        <h1>Logo Here</h1>
+        <h4>Flowers and Alcohols to Celebrate or to Contemplate</h4>
+
+    </div>
+    <div class="col-md-4 rounded-3 m-5 px-4 py-2" style="background-color: #2D4F2B;">
+        <h2 class="text-center mb-4" style="color: #FFB823;">Register</h2>
+
+        <form asp-controller="User" asp-action="Register" method="post">
+            <div class="form-group pt-4">
+                <input type="text" class="form-control  rounded-pill" id="Username" name="Username" placeholder="Username" required />
+            </div>
+
+            <div class="form-group pt-4">
+                <input type="password" class="form-control  rounded-pill" id="Password" name="Password" placeholder="Password" required />
+            </div>
+
+            <div class="form-group pt-4">
+                <input type="password" class="form-control  rounded-pill" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm Password" required />
+            </div>
+
+            <div class="text-center py-3">
+                <button type="submit" class="btn btn-block rounded-pill" style="width: 300px; background-color: #FFB823; color: white; font-weight: bold;">Create Account</button>
+            </div>
+        </form>
+    </div>
+</div>
