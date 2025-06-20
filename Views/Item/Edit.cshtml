@@ -2,33 +2,6 @@
     ViewData["Title"] = "Edit";
 }
 
-<header>
-    <link href="/css/style.css" rel="stylesheet" />
-</header>
-
-<div class="row" style="background-color: #708A58;">
-    <p class="text-end pe-4 pt-2 text-white">User</p>
-</div>
-
-<div class="d-flex">
-    <div class="text-white p-3 vh-100 sidebar" style="width: 220px;">
-        <h4 class="text-light">LOGO HERE</h4>
-        <ul class="nav flex-column mt-4">
-            <li class="nav-item">
-                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Inventory">Inventory</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Add">Add Item</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-warning fw-bold" asp-area="" asp-controller="Home" asp-action="Edit">Edit Inventory</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Delete">Delete Item</a>
-            </li>
-        </ul>
-    </div>
-
     <!-- Main Content -->
     <div class="container pt-3 pb-4" style="min-height: 100vh;">
         <div class="d-flex justify-content-between align-items-center mb-4">
@@ -40,29 +13,78 @@
         </div>
 
         <table class="table table-hover table-bordered text-center">
-            <thead class="table-light">
-                <tr>
-                    <th>Item ID</th>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Description</th>
-                    <th>Quantity</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
+        <thead class="table-light">
+            <tr>
+                <th style="width: 10%;">Item ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th style="width: 35%;">Description</th>
+                <th style="width: 5%">Quantity</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@item.ID</td>
-                        <td>@item.Name</td>
-                        <td>@item.Category</td>
-                        <td>@item.Description</td>
-                        <td>@item.Quantity</td>
-                        <td>@item.Status</td>
+                    <td>
+                        <input type="text" class="form-control text-center" value=@item.ID readonly />
+                    </td>
+                    <td>
+                        <input type="text" class="form-control text-center" value=@item.Name />
+                    </td>
+                    <td>
+                        <select class="form-select text-center">
+                            <option selected disabled>@item.Category</option>
+                            <option>Flower</option>
+                            <option>Alcohol</option>
+                            <option>Flower & Alcohol</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control text-center" value=@item.Description />
+                    </td>
+                    <td>
+                        <input type="number" class="form-control text-center" value=@item.Quantity readonly />
+                    </td>
+                    <td>
+                        <input type="text" class="form-control text-center" value="2025-06-19" readonly />
+                    </td>
+                    <td>
+                        <input type="text" class="form-control text-center" value=@item.Status readonly />
+                    </td>
                     </tr>
 
                 }
+
+            <tr>
+                <td>
+                    <input type="text" class="form-control text-center" value="1234" readonly />
+                </td>
+                <td>
+                    <input type="text" class="form-control text-center" value="Rose" />
+                </td>
+                <td>
+                    <select class="form-select text-center">
+                        <option selected>Bouquet</option>
+                        <option>Single</option>
+                        <option>Gift Set</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" class="form-control text-center" value="Freshly picked flowers" />
+                </td>
+                <td>
+                    <input type="number" class="form-control text-center" value="10" readonly />
+                </td>
+                <td>
+                    <input type="text" class="form-control text-center" value="2025-06-19" readonly />
+                </td>
+                <td>
+                    <input type="text" class="form-control text-center" value="High" readonly />
+                </td>
+            </tr>
         </table>
     </div>
 </div>
