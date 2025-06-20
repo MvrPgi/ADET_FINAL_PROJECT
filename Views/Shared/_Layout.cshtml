@@ -18,26 +18,26 @@
     </div>
 
     <div class="d-flex">
-        <div class="text-white p-3 vh-100 sidebar" style="width: 220px;">
+        <div class="text-white p-3 sidebar" style="width: 220px; min-height: 100vh;">
             <div class="d-flex justify-content-center mb-3">
                 <img src="~/assets/logo-beige.png" class="text-center" alt="BuLAKLAK Logo" style="height: auto; width: 150px;" />
             </div>
             <ul class="nav flex-column mt-4">
                 <li class="nav-item">
                     <a class="nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Inventory" ? "active text-warning fw-bold" : "text-white")"
-                       asp-area="" asp-controller="Home" asp-action="Inventory">Inventory</a>
+                       asp-area="" asp-controller="Item" asp-action="Inventory">Inventory</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Add" || ViewContext.RouteData.Values["action"].ToString() == "NewAdd" ? "active text-warning fw-bold" : "text-white")"
-                       asp-area="" asp-controller="Home" asp-action="Add">Add Item</a>
+                       asp-area="" asp-controller="Item" asp-action="Add">Add Item</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Edit" ? "active text-warning fw-bold" : "text-white")"
-                       asp-area="" asp-controller="Home" asp-action="Edit">Edit Inventory</a>
+                       asp-area="" asp-controller="Item" asp-action="Edit">Edit Inventory</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link  @(ViewContext.RouteData.Values["action"].ToString() == "Delete" ? "active text-warning fw-bold" : "text-white")"
-                       asp-area="" asp-controller="Home" asp-action="Delete">Delete Item</a>
+                       asp-area="" asp-controller="Item" asp-action="Delete">Delete Item</a>
                 </li>
             </ul>
         </div>
