@@ -14,8 +14,16 @@ namespace ADET_FINAL_PROJECT.Controllers
             this.dbContext = dbContext;
         }
         [HttpGet]
-        public IActionResult Add()
+        public async Task<IActionResult> Add()
         {
+            var itemNames = await dbContext.Items
+                .Select(i => i.Name)
+                .Distinct()
+                .OrderBy(n => n)
+                .ToListAsync();
+
+            ViewBag.ItemNames = itemNames;
+
             return View();
         }
 
