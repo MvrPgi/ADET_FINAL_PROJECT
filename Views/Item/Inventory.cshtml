@@ -30,7 +30,10 @@
                         <td>@item.Description</td>
                         <td>@item.Quantity</td>
                         <td>@item.CreatedAt</td>
-                        <td>@item.Status</td>
+                        <td class="fw-bold"
+                            style="color: @(item.Status == "High" ? "green" : item.Status == "Medium" ? "orange" : "red")">
+                            @item.Status
+                        </td>
                     </tr>
                 }
         </table>
