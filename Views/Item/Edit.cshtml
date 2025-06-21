@@ -7,28 +7,28 @@
             <h2 class="mb-0" style="font-family: 'Caveat', cursive;">Edit Item</h2>
             <div class="d-flex gap-2">
                 <button type="submit" class="btn btn-success rounded-pill fw-bold">Confirm</button>
-                <a asp-controller="Home" asp-action="Inventory" class="btn btn-danger rounded-pill fw-bold">Cancel</a>
+                <a asp-controller="Item" asp-action="Inventory" class="btn btn-danger rounded-pill fw-bold">Cancel</a>
             </div>
         </div>
 
-        <table class="table table-hover table-bordered text-center">
+        <table class="table table-hover text-center table-bordered custom-table">
             <thead class="table-light">
                 <tr>
-                    <th>Edit</th>
-                    <th style="width: 10%;">Item ID</th>
+                    <th class ="border-0"></th>
+                    <th style="width: 30%;">Item ID</th>
                     <th>Name</th>
                     <th>Category</th>
-                    <th style="width: 35%;">Description</th>
+                    <th>Description</th>
                     <th style="width: 5%">Quantity</th>
-                    <th>Date</th>
-                    <th>Status</th>
+                    <th style="width: 9%">Date</th>
+                    <th style="width: 9%">Status</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>
+                        <td class="border-0">
                             <input type="radio" name="SelectedItemId" value="@item.ID" class="form-check-input toggle"
                                    onchange="selectRow(this)">
                         </td>
