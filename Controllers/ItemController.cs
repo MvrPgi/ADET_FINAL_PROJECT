@@ -22,19 +22,22 @@ namespace ADET_FINAL_PROJECT.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(AddItemViewModel viewModel)
         {
+            var quantity = viewModel.Quantity;
             var item = new Item
             {
                 Name = viewModel.Name,
                 Category = viewModel.Category,
                 Description = viewModel.Description,
                 Quantity = viewModel.Quantity,
-                Status = "High" // Default value for Status
+                Status = quantity < 10 ? "Low" :
+                         quantity > 20 ? "High" : "Medium",
+                CreatedAt = DateTime.UtcNow 
             };
 
             await dbContext.Items.AddAsync(item);
             await dbContext.SaveChangesAsync();
 
-            return View();
+            return RedirectToAction("Inventory");
         }
 
         public IActionResult NewAdd()
@@ -45,21 +48,24 @@ namespace ADET_FINAL_PROJECT.Controllers
         [HttpPost]
         public async Task<IActionResult> NewAdd(AddItemViewModel viewModel)
         {
-            int quantity = int.TryParse(viewModel.Quantity, out int q) ? q : 0;
+            var quantity = viewModel.Quantity;
+
             var item = new Item
             {
                 Name = viewModel.Name,
                 Category = viewModel.Category,
                 Description = viewModel.Description,
-                Quantity = viewModel.Quantity,
+                Quantity = quantity, 
                 Status = quantity < 10 ? "Low" :
-                         quantity > 20 ? "High" : "Medium"
+                         quantity > 20 ? "High" : "Medium",
+                CreatedAt = DateTime.UtcNow 
+
             };
 
             await dbContext.Items.AddAsync(item);
             await dbContext.SaveChangesAsync();
 
-            return View();
+            return RedirectToAction("Inventory");
         }
 
         [HttpGet]
@@ -102,21 +108,33 @@ namespace ADET_FINAL_PROJECT.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditConfirmed(Guid id, AddItemViewModel viewModel)
+        public async Task<IActionResult> EditConfirmed()
         {
+            var selectedItemId = Request.Form["SelectedItemId"];
+            if (!Guid.TryParse(selectedItemId, out Guid id))
+            {
+                return BadRequest();
+            }
+
             var item = await dbContext.Items.FindAsync(id);
             if (item == null)
             {
                 return NotFound();
             }
-            item.Name = viewModel.Name;
-            item.Category = viewModel.Category;
-            item.Description = viewModel.Description;
-            item.Quantity = viewModel.Quantity;
-            item.Status = "High"; // Default value for Status
+
+
+            item.Name = Request.Form["Name"]!;
+            item.Category = Request.Form["Category"]!;
+            item.Description = Request.Form["Description"]!;
+            item.Quantity = int.TryParse(Request.Form["Quantity"], out var q) ? q : 0;
+            item.Status = q < 10 ? "Low" : q > 20 ? "High" : "Medium";
+            item.CreatedAt = DateTime.UtcNow; 
+
             dbContext.Items.Update(item);
             await dbContext.SaveChangesAsync();
+
             return RedirectToAction("Edit");
         }
+
     }
 }
