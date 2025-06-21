@@ -1,82 +1,86 @@
-﻿@{
-    ViewData["Title"] = "Edit";
-}
-@model List<ADET_FINAL_PROJECT.Models.Entities.Item>
-    <div class="container pt-3 pb-4" style="min-height: 100vh;">
+﻿@model List<ADET_FINAL_PROJECT.Models.Entities.Item>
+
+<div class="container pt-3 pb-4" style="min-height: 100vh;">
+    <form asp-action="EditConfirmed" asp-controller="Item" method="post">
+        @Html.AntiForgeryToken()
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2 class="mb-0" style="font-family: 'Caveat', cursive;">Edit Item</h2>
-            <div class="d-flex gap-2" style="">
+            <div class="d-flex gap-2">
                 <button type="submit" class="btn btn-success rounded-pill fw-bold">Confirm</button>
                 <a asp-controller="Home" asp-action="Inventory" class="btn btn-danger rounded-pill fw-bold">Cancel</a>
             </div>
         </div>
 
-    <table class="table table-hover table-bordered text-center">
-        <thead class="table-light">
-            <tr>
-                <th>Edit</th>
-                <th style="width: 10%;">Item ID</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th style="width: 35%;">Description</th>
-                <th style="width: 5%">Quantity</th>
-                <th>Date</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+        <table class="table table-hover table-bordered text-center">
+            <thead class="table-light">
                 <tr>
-                    <td>
-                        <input type="checkbox" class="form-check-input toggle"
-                               onchange="rowEdit(this)">
-                    </td>
-
-                    <td>
-                        <input type="text" class="form-control text-center" value="@item.ID" readonly />
-                    </td>
-                    <td>
-                        <input type="text" class="form-control text-center" value="@item.Name" disabled />
-                    </td>
-                    <td>
-                        <select class="form-select text-center" disabled>
-                            <option selected disabled>@item.Category</option>
-                            <option>Flower</option>
-                            <option>Alcohol</option>
-                            <option>Flower & Alcohol</option>
-                        </select>
-                    </td>
-                    <td>
-                        <input type="text" class="form-control text-center" value="@item.Description" disabled />
-                    </td>
-                    <td>
-                        <input type="number" class="form-control text-center" value="@item.Quantity" readonly />
-                    </td>
-                    <td>
-                        <input type="text" class="form-control text-center" value="2025-06-19" readonly />
-                    </td>
-                    <td>
-                        <input type="text" class="form-control text-center" value="@item.Status" readonly />
-                    </td>
+                    <th>Edit</th>
+                    <th style="width: 10%;">Item ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th style="width: 35%;">Description</th>
+                    <th style="width: 5%">Quantity</th>
+                    <th>Date</th>
+                    <th>Status</th>
                 </tr>
-            }
-        </tbody>
-    </table>
-
-    </div>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <input type="radio" name="SelectedItemId" value="@item.ID" class="form-check-input toggle"
+                                   onchange="selectRow(this)">
+                        </td>
+                        <td>
+                            <input type="hidden" name="ID" value="@item.ID" />
+                            <input type="text" class="form-control text-center" value="@item.ID" readonly />
+                        </td>
+                        <td>
+                            <input type="text" name="Name" class="form-control text-center" value="@item.Name" disabled />
+                        </td>
+                        <td>
+                            <select name="Category" class="form-select text-center" disabled>
+                                <option selected >@item.Category</option>
+                                <option>Flower</option>
+                                <option>Alcohol</option>
+                                <option>Flower & Alcohol</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" name="Description" class="form-control text-center" value="@item.Description" disabled />
+                        </td>
+                        <td>
+                            <input type="number" name="Quantity" class="form-control text-center" value="@item.Quantity" disabled />
+                        </td>
+                        <td>
+                            <input type="text" class="form-control text-center" value=@item.CreatedAt readonly />
+                        </td>
+                        <td>
+                            <input type="text" class="form-control text-center" value="@item.Status" readonly />
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </form>
 </div>
 
-
-    <script>
-        function rowEdit(checkbox) {
-            const row = checkbox.closest('tr');
-            const inputs = row.querySelectorAll('input, select');
-
-            inputs.forEach(input => {
+<script>
+    function selectRow(radio) {
+        document.querySelectorAll('tbody tr').forEach(row => {
+            row.querySelectorAll('input, select').forEach(input => {
                 if (!input.classList.contains('toggle')) {
-                    input.disabled = !checkbox.checked;
+                    input.disabled = true;
                 }
             });
-        }
-    </script>
+        });
+
+        const row = radio.closest('tr');
+        row.querySelectorAll('input, select').forEach(input => {
+            if (!input.classList.contains('toggle')) {
+                input.disabled = false;
+            }
+        });
+    }
+</script>
