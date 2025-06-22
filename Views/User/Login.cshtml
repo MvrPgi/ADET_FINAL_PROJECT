@@ -1,14 +1,25 @@
 ﻿@{
-    ViewData["Title"] = "Login";
+    Layout = null;
 }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page - ADET_FINAL_PROJECT</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ADET_FINAL_PROJECT.styles.css" asp-append-version="true" />
+</head>
 
 <header>
     <link href="/css/style.css" rel="stylesheet" />
 </header>
 
 <div class="row justify-content-center">
-    <div class="text-center p-5" style="font-family: 'Caveat', cursive;">
-        <h1>Logo Here</h1>
+    <div class="text-center p-1" style="font-family: 'Caveat', cursive;">
+        <img src="~/assets/logo-green.png" alt="BuLAKLAK Logo" style="height: auto; width: 300px;" />
         <h4>Flowers and Alcohols to Celebrate or to Contemplate</h4>
         <a id="hoverButton" class="btn btn-danger" asp-area="" asp-controller="Home" asp-action="Inventory">
             Click!
@@ -37,7 +48,7 @@
 
 
             <div class="text-center mt-3">
-                <p class="text-white">Don't have an account? <a asp-area="" asp-controller="Home" asp-action="Register">Create Account</a></p>
+                <p class="text-white">Don't have an account? <a asp-area="" asp-controller="User" asp-action="Register">Create Account</a></p>
             </div>
         </form>
     </div>
