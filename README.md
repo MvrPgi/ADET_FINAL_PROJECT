@@ -1,17 +1,17 @@
 # BuLAKLAK
-An inventory system designed for our imaginary flower and alcohol shop. Its purpose is to efficiently manage stock for products catering to various customer needs, whether for celebration or contemplation. This is the final output of four students from the Polytechnic University of the Philippines (PUP) for the course **Application Development**.
+An inventory system designed for our imaginary flower and alcohol shop. Its purpose is to efficiently manage stock for products catering to various customer needs, whether for celebration or contemplation. This system is the final output of four students from the Polytechnic University of the Philippines (PUP) for the course **Application Development**.
 
 ## 📥 BuLAKLAK Inventory System Installation Guide (Windows / macOS / Linux)
 The BuLAKLAK Inventory System is a .NET application that leverages .NET 8 and can be developed using Visual Studio 2022 (Windows only) or Visual Studio Code (cross-platform). Choose your preferred setup below.
 
 ## ⚙️ Prerequisites
-Requirement	Windows	macOS	Linux
-.NET SDK 8+	✅	✅	✅
-SQL Server (Developer Edition) or [Azure SQL]	✅	✅	✅
-Visual Studio 2022	✅	❌	❌
-Visual Studio Code	✅	✅	✅
-EF Core CLI	✅	✅	✅
-Git	✅	✅	✅
+Requirement	                                      Windows	    macOS	       Linux
+.NET SDK 8+	                                        ✅	       ✅	          ✅
+SQL Server (Developer Edition) or [Azure SQL]	      ✅	       ✅	          ✅
+Visual Studio 2022                                	✅         ❌	        ❌
+Visual Studio Code                                	✅	       ✅	          ✅
+EF Core CLI	                                        ✅	       ✅	          ✅
+Git	                                                ✅	       ✅	          ✅
 
 ##  Installation Using Visual Studio 2022 (Windows Only)
 1. Install Visual Studio 2022
@@ -49,7 +49,7 @@ The application should build and launch in your default web browser, typically n
 Ensure the .NET 8 SDK is installed. You can verify by running:
 Bash
 dotnet --version
-# Should return 8.0.x or above
+Should return 8.0.x or above
 2. Clone the Repository
 Open your terminal or command prompt.
 Navigate to your desired project directory.
