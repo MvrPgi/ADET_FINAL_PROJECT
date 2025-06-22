@@ -1,6 +1,5 @@
-# Final Project - Application Development
-
-This project is the final output of students from the Polytechnic University of the Philippines (PUP) for the course **Application Development**.
+# BuLAKLAK
+An inventory system designed for our flower and alcohol shop. Its purpose is to efficiently manage stock for products catering to various customer needs, whether for celebration or contemplation. This project is the final output of students from the Polytechnic University of the Philippines (PUP) for the course **Application Development**.
 
 ## Developers
 
@@ -11,4 +10,4 @@ This project is the final output of students from the Polytechnic University of 
 
 ---
 
-© Polytechnic University of the Philippines  
+Â© Polytechnic University of the Philippines  
