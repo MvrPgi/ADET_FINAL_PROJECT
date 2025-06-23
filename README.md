@@ -178,31 +178,25 @@ To remove an item from your inventory:
 2.  (Depending on implementation) You might be presented with a list of items where you can select one or more for deletion, or a dedicated form to specify the item to delete.
 3.  Follow the on-screen prompts to confirm the deletion. Be cautious, as this action is usually irreversible.
 
-## Developers
-* Alwyn John M. Mercene  
-* Jozar Tumabini  
-* Aira Robles  
-* John Vincent Modelo
-
 # Screenshots
 BuLAKLAK Application
 
 <table>
     <tr>
         <td>
-            <img src="resources/UI/AddItem.png" alt="Add Item" />
+            <img src="https://github.com/user-attachments/assets/5559066e-6283-4614-a4cf-1b76ffd08909" alt="Add Item" />
             <br />
             <p align="center">Add Item</p>
         </td>
         <td>
-            <img src="resources/UI/AddNewItem.png" alt="Add New Item" />
+            <img src="https://github.com/user-attachments/assets/5559066e-6283-4614-a4cf-1b76ffd08909" alt="Add New Item" />
             <br />
             <p align="center">Add New Item</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="resources/UI/EditInventory.png" alt="Edit Inventory" />
+            <img src="https://github.com/user-attachments/assets/ed9320ab-45d7-4476-8219-6aaab479f110" alt="Edit Inventory" />
             <br />
             <p align="center">Edit Inventory</p>
         </td>
@@ -222,6 +216,11 @@ BuLAKLAK Application
 </table>
 
 
+## Developers
+* Alwyn John M. Mercene  
+* Jozar Tumabini  
+* Aira Robles  
+* John Vincent Modelo
 
 
 ---
