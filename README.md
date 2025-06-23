@@ -182,7 +182,47 @@ To remove an item from your inventory:
 * Alwyn John M. Mercene  
 * Jozar Tumabini  
 * Aira Robles  
-* John Vincent Modelo  
+* John Vincent Modelo
+
+# Screenshots
+BuLAKLAK Application
+
+<table>
+    <tr>
+        <td>
+            <img src="resources/UI/AddItem.png" alt="Add Item" />
+            <br />
+            <p align="center">Add Item</p>
+        </td>
+        <td>
+            <img src="resources/UI/AddNewItem.png" alt="Add New Item" />
+            <br />
+            <p align="center">Add New Item</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="resources/UI/EditInventory.png" alt="Edit Inventory" />
+            <br />
+            <p align="center">Edit Inventory</p>
+        </td>
+        <td>
+            <img src="resources/UI/Login.png" alt="Login" />
+            <br />
+            <p align="center">Login</p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <img src="resources/UI/Register.png" alt="Register" />
+            <br />
+            <p align="center">Register</p>
+        </td>
+    </tr>
+</table>
+
+
+
 
 ---
 
