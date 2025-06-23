@@ -71,7 +71,7 @@ namespace ADET_FINAL_PROJECT.Controllers
 
             HttpContext.Session.SetString("Username", newUser.Username);
 
-            return RedirectToAction("Inventory", "Item");
+            return RedirectToAction("Login");
         }
     }
 }
