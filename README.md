@@ -178,9 +178,6 @@ To remove an item from your inventory:
 2.  (Depending on implementation) You might be presented with a list of items where you can select one or more for deletion, or a dedicated form to specify the item to delete.
 3.  Follow the on-screen prompts to confirm the deletion. Be cautious, as this action is usually irreversible.
 
-## 5. User Profile (Conceptual)
-Clicking on the "User" icon in the header might allow you to view your profile details, change your password, or log out of the system.
-
 ## Developers
 * Alwyn John M. Mercene  
 * Jozar Tumabini  
