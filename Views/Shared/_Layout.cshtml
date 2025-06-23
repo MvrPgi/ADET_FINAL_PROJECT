@@ -36,11 +36,13 @@
                 <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Delete" ? "text-warning fw-bold" : "text-white")"
                    asp-controller="Item" asp-action="Delete">Delete Item</a>
             </li>
-        </div>
-            <div class="pb-3">
-                <a class="nav-link text-danger fw-bold" asp-controller="User" asp-action="Login">Logout</a>
-            </div>
         </ul>
+        </div>
+        <div>
+           <ul>
+                <a class="nav-link text-danger fw-bold" asp-controller="User" asp-action="Login">Logout</a>
+           </ul>
+        </div>
     </div>
     <div class="flex-grow-1" style="margin-left: 220px; padding: 1rem;">
         @RenderBody()

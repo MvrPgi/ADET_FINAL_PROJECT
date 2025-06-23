@@ -8,44 +8,39 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register Page - ADET_FINAL_PROJECT</title>
+    <link rel="icon" type="image/png" href="~/assets/logo-beige.png" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="~/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/ADET_FINAL_PROJECT.styles.css" asp-append-version="true" />
 </head>
+<body>
+    <div class="row justify-content-center">
+        <div class="text-center p-1" style="font-family: 'Caveat', cursive;">
+            <img src="~/assets/logo-green.png" alt="BuLAKLAK Logo" style="height: auto; width: 300px;" />
+            <h4>Flowers and Alcohols to Celebrate or to Contemplate</h4>
 
-<header>
-    <link href="/css/style.css" rel="stylesheet" />
-</header>
+        </div>
+        <div class="col-md-4 rounded-3 m-5 px-4 py-2" style="background-color: #2D4F2B;">
+            <h2 class="text-center mb-4" style="color: #FFB823;">Register</h2>
 
-<header>
-    <link href="/css/style.css" rel="stylesheet" />
-</header>
+            <form asp-controller="User" asp-action="Register" method="post">
+                <div class="form-group pt-4">
+                    <input type="text" class="form-control  rounded-pill" id="Username" name="Username" placeholder="Username" required />
+                </div>
 
-<div class="row justify-content-center">
-    <div class="text-center p-1" style="font-family: 'Caveat', cursive;">
-        <img src="~/assets/logo-green.png" alt="BuLAKLAK Logo" style="height: auto; width: 300px;" />
-        <h4>Flowers and Alcohols to Celebrate or to Contemplate</h4>
+                <div class="form-group pt-4">
+                    <input type="password" class="form-control  rounded-pill" id="Password" name="Password" placeholder="Password" required />
+                </div>
 
+                <div class="form-group pt-4">
+                    <input type="password" class="form-control  rounded-pill" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm Password" required />
+                </div>
+
+                <div class="text-center py-3">
+                    <button type="submit" class="btn btn-block rounded-pill" style="width: 300px; background-color: #FFB823; color: white; font-weight: bold;">Create Account</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="col-md-4 rounded-3 m-5 px-4 py-2" style="background-color: #2D4F2B;">
-        <h2 class="text-center mb-4" style="color: #FFB823;">Register</h2>
-
-        <form asp-controller="User" asp-action="Register" method="post">
-            <div class="form-group pt-4">
-                <input type="text" class="form-control  rounded-pill" id="Username" name="Username" placeholder="Username" required />
-            </div>
-
-            <div class="form-group pt-4">
-                <input type="password" class="form-control  rounded-pill" id="Password" name="Password" placeholder="Password" required />
-            </div>
-
-            <div class="form-group pt-4">
-                <input type="password" class="form-control  rounded-pill" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm Password" required />
-            </div>
-
-            <div class="text-center py-3">
-                <button type="submit" class="btn btn-block rounded-pill" style="width: 300px; background-color: #FFB823; color: white; font-weight: bold;">Create Account</button>
-            </div>
-        </form>
-    </div>
-</div>
+</body>
+</html>
