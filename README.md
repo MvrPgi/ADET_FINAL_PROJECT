@@ -184,31 +184,31 @@ BuLAKLAK Application
 <table>
     <tr>
         <td>
-            <img src="https://github.com/user-attachments/assets/5559066e-6283-4614-a4cf-1b76ffd08909" alt="Add Item" />
+            <img src="https://github.com/user-attachments/assets/5559066e-6283-4614-a4cf-1b76ffd08909" alt="Add Item" style="width:400px;"/>
             <br />
             <p align="center">Add Item</p>
         </td>
         <td>
-            <img src="https://github.com/user-attachments/assets/5559066e-6283-4614-a4cf-1b76ffd08909" alt="Add New Item" />
+            <img src="https://github.com/user-attachments/assets/5559066e-6283-4614-a4cf-1b76ffd08909" alt="Add New Item" style="width:400px;"/>
             <br />
             <p align="center">Add New Item</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="https://github.com/user-attachments/assets/ed9320ab-45d7-4476-8219-6aaab479f110" alt="Edit Inventory" />
+            <img src="https://github.com/user-attachments/assets/ed9320ab-45d7-4476-8219-6aaab479f110" alt="Edit Inventory" style="width:400px;"/>
             <br />
             <p align="center">Edit Inventory</p>
         </td>
         <td>
-            <img src="resources/UI/Login.png" alt="Login" />
+            <img src="https://github.com/user-attachments/assets/7bda931d-192e-4c2c-ac39-9c02d81731d9" alt="Login" style="width:400px;"/>
             <br />
             <p align="center">Login</p>
         </td>
     </tr>
     <tr>
-        <td colspan="2">
-            <img src="resources/UI/Register.png" alt="Register" />
+        <td colspan="2" align="center">
+            <img src="https://github.com/user-attachments/assets/d1083548-7c51-422d-813e-36faf1c0a055" alt="Register" style="width:400px;"/>
             <br />
             <p align="center">Register</p>
         </td>
