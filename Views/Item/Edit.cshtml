@@ -37,10 +37,10 @@
                             <input type="text" class="form-control text-center" value="@item.ID" readonly />
                         </td>
                         <td>
-                            <input type="text" name="Name" class="form-control text-center" value="@item.Name" disabled />
+                            <input type="text" name="Name" class="form-control text-center" value="@item.Name" disabled required />
                         </td>
                         <td>
-                            <select name="Category" class="form-select text-center" disabled>
+                            <select name="Category" class="form-select text-center" disabled required>
                                 <option selected >@item.Category</option>
                                 <option>Flower</option>
                                 <option>Alcohol</option>
@@ -48,10 +48,10 @@
                             </select>
                         </td>
                         <td>
-                            <input type="text" name="Description" class="form-control text-center" value="@item.Description" disabled />
+                            <input type="text" name="Description" class="form-control text-center" value="@item.Description" disabled required />
                         </td>
                         <td>
-                            <input type="number" name="Quantity" class="form-control text-center" value="@item.Quantity" disabled />
+                            <input type="number" name="Quantity" class="form-control text-center" value="@item.Quantity" disabled required />
                         </td>
                         <td>
                             <input type="text" class="form-control text-center" value=@item.CreatedAt readonly />
